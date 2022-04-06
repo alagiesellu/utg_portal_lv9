@@ -1,0 +1,3 @@
+1. Separate Routes and Navbar routes
+2. Remove "this.$store.state.auth.type+'." from Sidebar.vue and ProfileNavbar.vue
+3.
