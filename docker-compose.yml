@@ -22,7 +22,7 @@ services:
         networks:
             - sail
         depends_on:
-            - redis
+            - memcached
             - meilisearch
             - selenium
     memcached:
