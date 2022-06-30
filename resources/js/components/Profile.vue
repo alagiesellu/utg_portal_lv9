@@ -172,13 +172,14 @@
 
                 if (profile.id !== this.user.profile_id)
                 {
-                    axios.post('/user/switch',{profile: profile.id})
+                    axios.post('/user/switch',{ profile: profile.id })
                         .then(res => {
 
                             if (res.data.success === null)
                                 this.switch_action.error = true;
                             else {
                                 this.switch_action.success = true;
+                                location.reload()
                             }
                         });
                 }

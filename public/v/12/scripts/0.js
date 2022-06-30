@@ -195,6 +195,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }).then(function (res) {
           if (res.data.success === null) _this.switch_action.error = true;else {
             _this.switch_action.success = true;
+            location.reload();
           }
         });
       }
