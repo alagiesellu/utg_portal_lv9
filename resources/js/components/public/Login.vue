@@ -72,6 +72,8 @@
                 axios.post(location.origin + '/auth/callback' + this.loginQueries)
                     .then(res => {
 
+                        console.log(res)
+
                         if (res.data.error) {
 
                             this.loading.hide();
@@ -84,6 +86,8 @@
                             localStorage.removeItem(window.cookies_key_start+'login_redirect');
                         }
                     }).catch(err => {
+
+                        console.log(err)
                         this.loading.hide();
                         this.errors = [err.name];
                         console.error(err);
