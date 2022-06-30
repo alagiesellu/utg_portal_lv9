@@ -1977,15 +1977,19 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = this.$loading.show();
+      console.log(this.loginQueries);
       axios.post(location.origin + '/auth/callback' + this.loginQueries).then(function (res) {
         if (res.data.error) {
           _this.loading.hide();
 
           _this.errors = res.data.error;
+
+          _this.redirect_login(res.data.success.user['type']);
         } else {
           window.Save.storeAuthToken(res.data.success.token);
-          var login_redirect = localStorage.getItem(window.cookies_key_start + 'login_redirect');
-          if (login_redirect) window.location.href = login_redirect;else window.location.href = window.user_type[res.data.success.user['type']];
+
+          _this.redirect_login(res.data.success.user['type']);
+
           localStorage.removeItem(window.cookies_key_start + 'login_redirect');
         }
       })["catch"](function (err) {
@@ -1994,6 +1998,10 @@ __webpack_require__.r(__webpack_exports__);
         _this.errors = [err.name];
         console.error(err);
       });
+    },
+    redirect_login: function redirect_login(type) {
+      var login_redirect = localStorage.getItem(window.cookies_key_start + 'login_redirect');
+      if (login_redirect) window.location.href = login_redirect;else window.location.href = window.user_type[type];
     },
     login: function login(event) {
       var _this2 = this;
