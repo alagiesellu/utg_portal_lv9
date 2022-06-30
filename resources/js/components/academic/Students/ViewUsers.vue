@@ -1,6 +1,6 @@
 <template>
-    <div class="row">
-        <div class="col-8">
+    <div>
+        <div class="col-md-8">
             <div class="card shadow">
                 <div class="card-header bg-transparent">
                     <h3 class="mb-0">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
             <div class="card shadow">
                 <div class="card-body">
                     <img class="img-thumbnail" :src="'/storage/profiles/'+$parent.user['img']">
