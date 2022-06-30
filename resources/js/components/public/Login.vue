@@ -74,12 +74,13 @@
 
                             this.loading.hide();
                             this.errors = res.data.error;
-                            this.redirect_login(res.data.success.user['type'])
+                            // this.redirect_login(res.data.success.user['type'])
                         } else {
 
                             window.Save.storeAuthToken(res.data.success.token);
-                            this.redirect_login(res.data.success.user.type)
+                            // this.redirect_login(res.data.success.user.type)
                             localStorage.removeItem(window.cookies_key_start+'login_redirect');
+                            location.reload()
                         }
                     }).catch(err => {
 

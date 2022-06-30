@@ -1981,15 +1981,12 @@ __webpack_require__.r(__webpack_exports__);
         if (res.data.error) {
           _this.loading.hide();
 
-          _this.errors = res.data.error;
-
-          _this.redirect_login(res.data.success.user['type']);
+          _this.errors = res.data.error; // this.redirect_login(res.data.success.user['type'])
         } else {
-          window.Save.storeAuthToken(res.data.success.token);
-
-          _this.redirect_login(res.data.success.user.type);
+          window.Save.storeAuthToken(res.data.success.token); // this.redirect_login(res.data.success.user.type)
 
           localStorage.removeItem(window.cookies_key_start + 'login_redirect');
+          location.reload();
         }
       })["catch"](function (err) {
         _this.loading.hide();
