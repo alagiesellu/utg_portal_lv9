@@ -67,30 +67,35 @@
 
                 this.loading = this.$loading.show();
 
+                console.log(this.loginQueries)
+
                 axios.post(location.origin + '/auth/callback' + this.loginQueries)
                     .then(res => {
 
                         if (res.data.error) {
+
                             this.loading.hide();
                             this.errors = res.data.error;
+                            this.redirect_login(res.data.success.user['type'])
                         } else {
 
                             window.Save.storeAuthToken(res.data.success.token);
-
-                            const login_redirect = localStorage.getItem(window.cookies_key_start+'login_redirect');
-
-                            if (login_redirect)
-                                window.location.href = login_redirect;
-                            else
-                                window.location.href = window.user_type[res.data.success.user['type']];
-
+                            this.redirect_login(res.data.success.user['type'])
                             localStorage.removeItem(window.cookies_key_start+'login_redirect');
                         }
                     }).catch(err => {
-                    this.loading.hide();
-                    this.errors = [err.name];
-                    console.error(err);
-                });
+                        this.loading.hide();
+                        this.errors = [err.name];
+                        console.error(err);
+                    });
+            },
+            redirect_login: function (type) {
+                const login_redirect = localStorage.getItem(window.cookies_key_start+'login_redirect');
+
+                if (login_redirect)
+                    window.location.href = login_redirect;
+                else
+                    window.location.href = window.user_type[type];
             },
             login: function(event) {
                 event.preventDefault();
