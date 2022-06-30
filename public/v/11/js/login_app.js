@@ -1970,6 +1970,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.loginQueries = location.search;
+    console.log(this.loginQueries);
     if (this.loginQueries) this.oAuthLogin();
   },
   methods: {
@@ -1977,7 +1978,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = this.$loading.show();
-      console.log(this.loginQueries);
       axios.post(location.origin + '/auth/callback' + this.loginQueries).then(function (res) {
         if (res.data.error) {
           _this.loading.hide();
