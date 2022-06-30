@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="{{ asset('img/UTG-icon.png') }}"/>
     <title>{{ config('app.name') }}</title>
-    <link href="{{ asset('v/11/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('v/12/css/app.css') }}" rel="stylesheet">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- Icons -->

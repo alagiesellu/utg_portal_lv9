@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-let version = 11;
+let version = 12;
 
 mix.config.webpackConfig.output = {
     chunkFilename: 'v/' + version + '/scripts/[name].js',
