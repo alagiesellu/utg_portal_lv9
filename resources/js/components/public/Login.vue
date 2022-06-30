@@ -69,6 +69,7 @@
 
                 axios.post(location.origin + '/auth/callback' + this.loginQueries)
                     .then(res => {
+
                         if (res.data.error) {
 
                             this.loading.hide();
@@ -77,7 +78,7 @@
                         } else {
 
                             window.Save.storeAuthToken(res.data.success.token);
-                            this.redirect_login(res.data.success.user['type'])
+                            this.redirect_login(res.data.success.user.type)
                             localStorage.removeItem(window.cookies_key_start+'login_redirect');
                         }
                     }).catch(err => {
