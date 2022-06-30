@@ -55,7 +55,7 @@
         </div>
     </div>
 </footer>
-<script src="{{ asset('v/11/js/login_app.js') }}"></script>
+<script src="{{ asset('v/12/js/login_app.js') }}"></script>
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{ asset('argon/assets/vendor/jquery/dist/jquery.min.js') }}"></script>

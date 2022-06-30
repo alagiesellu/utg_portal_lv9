@@ -27,6 +27,6 @@
 <!-- Argon JS -->
 <script src="{{ asset('argon/assets/js/argon.js?v=1.0.0') }}"></script>
 {{--<script src="{{ asset('js/app.js') }}"></script>--}}
-<script src="{{ asset('v/11/js/app.js') }}"></script>
+<script src="{{ asset('v/12/js/app.js') }}"></script>
 </body>
 </html>
