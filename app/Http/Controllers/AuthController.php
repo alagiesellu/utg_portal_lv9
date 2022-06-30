@@ -48,6 +48,7 @@ class AuthController extends Controller
 
             return response()->json(['success' => [
                 'token' => $user->createToken('token', $user->roles)->accessToken,
+                'user' => $user,
             ]]);
         } catch (\Exception $exception) {
             return response()->json([

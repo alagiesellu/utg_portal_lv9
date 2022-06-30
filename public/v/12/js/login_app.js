@@ -1970,7 +1970,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.loginQueries = location.search;
-    console.log(this.loginQueries);
     if (this.loginQueries) this.oAuthLogin();
   },
   methods: {
@@ -1979,8 +1978,6 @@ __webpack_require__.r(__webpack_exports__);
 
       this.loading = this.$loading.show();
       axios.post(location.origin + '/auth/callback' + this.loginQueries).then(function (res) {
-        console.log(res);
-
         if (res.data.error) {
           _this.loading.hide();
 
@@ -1995,8 +1992,6 @@ __webpack_require__.r(__webpack_exports__);
           localStorage.removeItem(window.cookies_key_start + 'login_redirect');
         }
       })["catch"](function (err) {
-        console.log(err);
-
         _this.loading.hide();
 
         _this.errors = [err.name];

@@ -59,8 +59,6 @@
         mounted() {
             this.loginQueries = location.search
 
-            console.log(this.loginQueries)
-
             if (this.loginQueries)
                 this.oAuthLogin()
         },
@@ -71,9 +69,6 @@
 
                 axios.post(location.origin + '/auth/callback' + this.loginQueries)
                     .then(res => {
-
-                        console.log(res)
-
                         if (res.data.error) {
 
                             this.loading.hide();
@@ -87,7 +82,6 @@
                         }
                     }).catch(err => {
 
-                        console.log(err)
                         this.loading.hide();
                         this.errors = [err.name];
                         console.error(err);
