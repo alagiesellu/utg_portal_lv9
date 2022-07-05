@@ -197,7 +197,7 @@ class UserController extends Controller
             'profile' => 'required|in:ad,ac,s',
             'dob' => 'required|date|before:today',
             'nationality' => 'required|string|size:2',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -206,10 +206,10 @@ class UserController extends Controller
         );
 
         $user = $request->user();
-        abort_errors_if(
-            $user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $request['middle_name'] = isset($request['middle_name']) ? $request['middle_name'] : '';
 
@@ -340,7 +340,7 @@ class UserController extends Controller
             'gender' => 'required|in:m,f',
             'dob' => 'required|date|before:today',
             'nationality' => 'required|string|size:2',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -350,10 +350,10 @@ class UserController extends Controller
 
         $auth_user = $request->user();
 
-        abort_errors_if(
-            $auth_user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $auth_user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $request['old_email'] = $user->email;
 
@@ -393,7 +393,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'id' => 'required|exists:users',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -403,10 +403,10 @@ class UserController extends Controller
 
         $auth_user = $request->user();
 
-        abort_errors_if(
-            $auth_user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $auth_user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $user = User::find($request['id']);
 
