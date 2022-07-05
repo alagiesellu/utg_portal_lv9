@@ -126,7 +126,7 @@ class VenueController extends Controller
         $request['venue'] = Venue::find($request['id']);
         $validator = Validator::make($request->all(), [
             'venue' => 'required',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -134,10 +134,10 @@ class VenueController extends Controller
             $validator->errors()->toArray()
         );
 
-        abort_errors_if(
-            $request->user()->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $request->user()->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $can_delete = $request['venue']->canDelete();
 

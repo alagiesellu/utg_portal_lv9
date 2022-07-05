@@ -119,7 +119,7 @@ class TermClassController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'id' => 'required',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -128,10 +128,10 @@ class TermClassController extends Controller
         );
 
         $user = $request->user();
-        abort_errors_if(
-            $user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $term_class = TermClass::find($request['id']);
 
@@ -160,7 +160,7 @@ class TermClassController extends Controller
 
         $validator = Validator::make($request->all(), [
             'term_class' => 'required',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -169,10 +169,10 @@ class TermClassController extends Controller
         );
 
         $user = $request->user();
-        abort_errors_if(
-            $user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         if ($request['profile_id'])
         {
@@ -233,7 +233,7 @@ class TermClassController extends Controller
             'major_course_id' => $major_course_id_val,
             'times' => $times_val,
             'size' => 'required|integer|min:0',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -256,10 +256,10 @@ class TermClassController extends Controller
         );
 
         $user = $request->user();
-        abort_errors_if(
-            $user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $tc = [
             'term_class_id' => $request['major_course_id'],

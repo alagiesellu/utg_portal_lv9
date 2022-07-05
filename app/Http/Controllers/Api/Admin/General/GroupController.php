@@ -44,7 +44,7 @@ class GroupController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'group' => 'required',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -53,10 +53,10 @@ class GroupController extends Controller
         );
 
         $user = $request->user();
-        abort_errors_if(
-            $user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $_roles = [];
         $config_roles = config('roles');

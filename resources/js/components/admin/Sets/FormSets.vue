@@ -104,16 +104,16 @@
                             </v-select>
                         </div>
                     </div>
-                    <div class="form-group mb-3">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Password confirmation"
-                                   type="password" v-model="$parent.form.input.password"
-                                   required>
-                        </div>
-                    </div>
+<!--                    <div class="form-group mb-3">-->
+<!--                        <div class="input-group">-->
+<!--                            <div class="input-group-prepend">-->
+<!--                                <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>-->
+<!--                            </div>-->
+<!--                            <input class="form-control" placeholder="Password confirmation"-->
+<!--                                   type="password" v-model="$parent.form.input.password"-->
+<!--                                   required>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Save changes</button>

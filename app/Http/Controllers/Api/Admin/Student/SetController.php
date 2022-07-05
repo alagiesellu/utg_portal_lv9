@@ -130,7 +130,7 @@ class SetController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'id' => 'required|exists:sets',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -140,10 +140,10 @@ class SetController extends Controller
 
         $user = $request->user();
 
-        abort_errors_if(
-            $user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $set = Set::find($request['id']);
 

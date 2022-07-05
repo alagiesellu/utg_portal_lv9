@@ -153,18 +153,18 @@
                                    required>
                         </div>
                     </div>
-                    <div class="form-group mb-3">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            Password confirmation :
-                                        </span>
-                            </div>
-                            <input class="form-control" placeholder="........."
-                                   type="password" v-model="$parent.form.input.password"
-                                   required>
-                        </div>
-                    </div>
+<!--                    <div class="form-group mb-3">-->
+<!--                        <div class="input-group">-->
+<!--                            <div class="input-group-prepend">-->
+<!--                                        <span class="input-group-text">-->
+<!--                                            Password confirmation :-->
+<!--                                        </span>-->
+<!--                            </div>-->
+<!--                            <input class="form-control" placeholder="........."-->
+<!--                                   type="password" v-model="$parent.form.input.password"-->
+<!--                                   required>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Save changes</button>

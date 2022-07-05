@@ -58,15 +58,15 @@
                             </td>
                             <td>
                                     <span v-if="confirm">
-                                         <div class="form-group mb-3">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                                </div>
-                                                <input class="form-control" placeholder="Password confirmation"
-                                                       type="password" v-model="password">
-                                            </div>
-                                        </div>
+<!--                                         <div class="form-group mb-3">-->
+<!--                                            <div class="input-group">-->
+<!--                                                <div class="input-group-prepend">-->
+<!--                                                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>-->
+<!--                                                </div>-->
+<!--                                                <input class="form-control" placeholder="Password confirmation"-->
+<!--                                                       type="password" v-model="password">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                         <button type="button" v-on:click="confirm = false" class="btn btn-danger btn-sm">Cancel</button>
                                         <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
                                     </span>

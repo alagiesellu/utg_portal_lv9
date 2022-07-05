@@ -161,7 +161,7 @@ class GradeController extends Controller
             'grade' => 'required|numeric',
             'score' => 'required|numeric',
             'assessment' => 'required|numeric',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
