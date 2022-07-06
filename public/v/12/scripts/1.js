@@ -2259,7 +2259,7 @@ var render = function () {
               },
               [
                 _c("i", { staticClass: "ni ni-bold-left" }),
-                _vm._v(" Back\n            "),
+                _vm._v(" Back\n                "),
               ]
             ),
             _vm._v(" "),
@@ -2273,7 +2273,9 @@ var render = function () {
                   [
                     _c("small", [_vm._v("#")]),
                     _vm._v(
-                      " " + _vm._s(_vm.$parent.user.num) + "\n                "
+                      " " +
+                        _vm._s(_vm.$parent.user.num) +
+                        "\n                    "
                     ),
                     _c("br"),
                     _vm._v(" "),
@@ -2758,43 +2760,7 @@ var render = function () {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group mb-3" }, [
-                  _c("div", { staticClass: "input-group" }, [
-                    _vm._m(11),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.$parent.form.input.password,
-                          expression: "$parent.form.input.password",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        placeholder: "Password confirmation",
-                        type: "password",
-                        required: "",
-                      },
-                      domProps: { value: _vm.$parent.form.input.password },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.$parent.form.input,
-                            "password",
-                            $event.target.value
-                          )
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _vm._m(12),
+                _vm._m(11),
               ],
               1
             ),
@@ -2897,16 +2863,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "input-group-prepend" }, [
       _c("span", { staticClass: "input-group-text" }, [
         _vm._v("Profile Type:"),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-prepend" }, [
-      _c("span", { staticClass: "input-group-text" }, [
-        _c("i", { staticClass: "ni ni-lock-circle-open" }),
       ]),
     ])
   },

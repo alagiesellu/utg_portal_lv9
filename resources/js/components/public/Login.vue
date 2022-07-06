@@ -15,7 +15,7 @@
                         SIGN IN WITH UTG EMAIL
                     </a>
                     <hr>
-                    <form role="form" v-on:submit="login">
+                    <form v-if="false" role="form" v-on:submit="login">
                         <div class="form-group mb-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
