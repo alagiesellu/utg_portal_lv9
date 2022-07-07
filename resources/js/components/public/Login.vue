@@ -81,8 +81,9 @@
 
                             window.Save.storeAuthToken(res.data.success.token);
                             // this.redirect_login(res.data.success.user.type)
-                            window.Save.storeLoginRedirect(res.data.success.user.type)
-                            // location.reload()
+                            let user_type = window.user_type[res.data.success.user.profile_type]
+                            window.Save.storeLoginRedirect(user_type)
+                            this.redirect_login(user_type)
                         }
                     }).catch(err => {
 
