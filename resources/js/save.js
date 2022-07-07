@@ -39,6 +39,7 @@ window.Save = {
 
     store: function(key, data)
     {
+        console.log(data)
         localStorage.setItem(window.cookies_key_start + key, data);
     },
 
