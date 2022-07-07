@@ -1,5 +1,5 @@
 const authTokenKey = 'auth_token';
-const loginRedirectKey = 'auth_token';
+const loginRedirectKey = 'login_redirect';
 
 window.Save = {
 
