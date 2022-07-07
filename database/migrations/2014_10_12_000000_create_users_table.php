@@ -15,12 +15,25 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->integer('num')->unique();
+            $table->string('first_name');
+            $table->string('middle_name')->nullable();
+            $table->string('last_name');
+            $table->string('email');
+            $table->bigInteger('tel');
+            $table->string('address');
+            $table->enum('gender', ['m','f']);
+            $table->date('dob');
+            $table->string('nationality', 2)->default('GM');
+            $table->string('img', 30)->default('default.png');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->unsignedBigInteger('profile_id');
+            $table->enum('profile_type', ['ad','ac','s'])->default('s');// admin, academic, student
         });
     }
 

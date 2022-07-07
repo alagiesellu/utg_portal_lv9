@@ -19,7 +19,7 @@ class OpenController extends Controller
     public function auth_callback(): JsonResponse
     {
         try {
-            $user = Socialite::driver('google')->user();
+            $user = Socialite::driver('google')->stateless()->user();
 
             $email = $user->getEmail();
 

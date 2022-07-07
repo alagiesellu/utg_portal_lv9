@@ -15,7 +15,7 @@
                         SIGN IN WITH UTG EMAIL
                     </a>
                     <hr>
-                    <form v-if="false" role="form" v-on:submit="login">
+                    <form role="form" v-on:submit="login">
                         <div class="form-group mb-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -24,14 +24,14 @@
                                 <input type="email" name="username" class="form-control" v-model="inputs.username" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                             </div>
                         </div>
-<!--                        <div class="form-group">-->
-<!--                            <div class="input-group">-->
-<!--                                <div class="input-group-prepend">-->
-<!--                                    <span class="input-group-text"><i class="ni ni-lock-circle-open" v-bind:class="[ this.errors.length ? 'text-danger':'' ]"></i></span>-->
-<!--                                </div>-->
-<!--                                <input type="password" class="form-control" v-model="inputs.password" placeholder="Password">-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-lock-circle-open" v-bind:class="[ this.errors.length ? 'text-danger':'' ]"></i></span>
+                                </div>
+                                <input type="password" class="form-control" v-model="inputs.password" placeholder="Password">
+                            </div>
+                        </div>
                         <div class="text-center">
                             <button v-on:click="login" class="btn btn-primary btn-block">
                                 Sign in
@@ -67,11 +67,8 @@
 
                 this.loading = this.$loading.show();
 
-                console.log(this.loginQueries)
-
                 axios.post(location.origin + '/auth/callback' + this.loginQueries)
                     .then(res => {
-                        console.log(res)
 
                         if (res.data.error) {
 
