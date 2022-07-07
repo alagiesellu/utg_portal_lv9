@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Facades\Socialite;
 
 /**
@@ -51,9 +52,11 @@ class AuthController extends Controller
                 'user' => $user,
             ]]);
         } catch (\Exception $exception) {
+            Log::info($exception);
             return response()->json([
                 'error' => [
                     'Fail to sign in. Try again.',
+                    $exception->getMessage(),
                 ]
             ]);
         }
