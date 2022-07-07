@@ -67,6 +67,8 @@
 
                 this.loading = this.$loading.show();
 
+                console.log(this.loginQueries)
+
                 axios.post(location.origin + '/auth/callback' + this.loginQueries)
                     .then(res => {
                         console.log(res)

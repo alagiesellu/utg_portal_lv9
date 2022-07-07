@@ -42,7 +42,7 @@ class OpenController extends Controller
             return response()->json([
                 'error' => [
                     'Fail to sign in. Try again.',
-                    $exception->getMessage(),
+                    //$exception->getMessage(),
                 ]
             ]);
         }
