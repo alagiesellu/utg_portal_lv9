@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="{{ asset('img/UTG-icon.png') }}"/>
     <title>{{ config('app.name') }}</title>
-    <link href="{{ asset('v/12/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('v/13/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/global.css') }}" rel="stylesheet">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -27,6 +27,6 @@
 <!-- Argon JS -->
 <script src="{{ asset('argon/assets/js/argon.js?v=1.0.0') }}"></script>
 {{--<script src="{{ asset('js/app.js') }}"></script>--}}
-<script src="{{ asset('v/12/js/app.js') }}"></script>
+<script src="{{ asset('v/13/js/app.js') }}"></script>
 </body>
 </html>
