@@ -79,7 +79,7 @@
 
                             window.Save.storeAuthToken(res.data.success.token);
                             // this.redirect_login(res.data.success.user.type)
-                            localStorage.removeItem(window.cookies_key_start+'login_redirect');
+                            window.Save.removeLoginRedirect()
                             location.reload()
                         }
                     }).catch(err => {
@@ -90,7 +90,7 @@
                     });
             },
             redirect_login: function (type) {
-                const login_redirect = localStorage.getItem(window.cookies_key_start+'login_redirect');
+                const login_redirect = window.Save.getLoginRedirect();// localStorage.getItem(window.cookies_key_start+'login_redirect');
 
                 if (login_redirect)
                     window.location.href = login_redirect;
@@ -125,14 +125,15 @@
 
                                 // keep backup at in cookies
 
-                                window.Save.store('token', res.data.success.user['token']);
+                                window.Save.storeAuthToken(res.data.success.user['token']);//.store('token', res.data.success.user['token']);
 
-                                const login_redirect = localStorage.getItem(window.cookies_key_start+'login_redirect');
+                                const login_redirect = window.Save.getLoginRedirect();// localStorage.getItem(window.cookies_key_start+'login_redirect');
                                 if (login_redirect)
                                     window.location.href = login_redirect;
                                 else
                                     window.location.href = window.user_type[res.data.success.user['type']];
-                                localStorage.removeItem(window.cookies_key_start+'login_redirect');
+                                window.Save.removeLoginRedirect();
+                                // localStorage.removeItem(window.cookies_key_start+'login_redirect');
                             }
                         }).catch(err => {
                             // console.error(err);

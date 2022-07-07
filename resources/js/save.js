@@ -1,25 +1,50 @@
-const authTokenKey = 'UTG_PORTAL_';
+const authTokenKey = 'auth_token';
+const loginRedirectKey = 'auth_token';
 
 window.Save = {
 
     storeAuthToken: function (data)
     {
-        localStorage.setItem(window.cookies_key_start + authTokenKey, data);
+        this.store(authTokenKey, data)
     },
 
     getAuthToken: function ()
     {
-        return localStorage.getItem(window.cookies_key_start + authTokenKey);
+        return this.get(authTokenKey)
+    },
+
+    removeAuthToken: function ()
+    {
+        this.remove(authTokenKey)
+    },
+
+    storeLoginRedirect: function (data) {
+        this.store(loginRedirectKey, data)
+    },
+
+    getLoginRedirect: function ()
+    {
+        return this.get(loginRedirectKey)
+    },
+
+    removeLoginRedirect: function ()
+    {
+        this.remove(loginRedirectKey)
     },
 
     get: function(key)
     {
-        return localStorage.getItem(window.cookies_key_start+key);
+        return localStorage.getItem(window.cookies_key_start + key);
     },
 
     store: function(key, data)
     {
-        localStorage.setItem(window.cookies_key_start+key, data);
+        localStorage.setItem(window.cookies_key_start + key, data);
+    },
+
+    remove: function (key)
+    {
+        localStorage.removeItem(key)
     },
 
     clear: function()

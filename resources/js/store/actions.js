@@ -23,13 +23,15 @@ let actions = {
                 else {
 
                     Object.keys(res.data.success.user).forEach(function (key) {
-                        sessionStorage.setItem(window.cookies_key_start+key, res.data.success.user[key]);
+                        window.Save.store(key, res.data.success.user[key])
+                        // sessionStorage.setItem(window.cookies_key_start+key, res.data.success.user[key]);
                     });
 
                     // keep backup at in cookies
-                    $cookies.set(window.cookies_key_start+'token', res.data.success.user['token']);
+                    window.Save.storeAuthToken(res.data.success.user['token'])
+                    // $cookies.set(window.cookies_key_start+'token', res.data.success.user['token']);
 
-                    const login_redirect = sessionStorage.getItem('login_redirect');
+                    const login_redirect = window.Save.getLoginRedirect();// sessionStorage.getItem('login_redirect');
 
                     if (login_redirect)
                         window.location.href = login_redirect;

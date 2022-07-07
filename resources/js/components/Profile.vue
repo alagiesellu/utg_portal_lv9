@@ -208,7 +208,8 @@
                         .then(res => {
                             this.form.message.success.push(res.data.success);
 
-                            sessionStorage.setItem(window.cookies_key_start + 'img', res.data.img);
+                            window.Save.store('img', res.data.img);
+                            // sessionStorage.setItem(window.cookies_key_start + 'img', res.data.img);
                             this.$store.state.auth.img = res.data.img;
                         });
                 } else {

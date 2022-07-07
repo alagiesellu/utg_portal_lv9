@@ -479,7 +479,8 @@ export default {
 
     keep_redirect: function() { // if user login expired, store previous url and logout.
 
-        localStorage.setItem(window.cookies_key_start+'login_redirect', window.location.href);
+        window.Save.storeLoginRedirect(window.location.href)
+        // localStorage.setItem(window.cookies_key_start+'login_redirect', window.location.href);
     },
 
     is_logged_in: function() {
@@ -516,13 +517,13 @@ export default {
 
     load_auth: function() {
 
-        if (sessionStorage.getItem(window.cookies_key_start+'name') != null)
+        if (window.Save.get('name') != null)
         {
             window.app.$store.state.auth = new User({
-                name: sessionStorage.getItem(window.cookies_key_start+'name'),
-                img: sessionStorage.getItem(window.cookies_key_start+'img'),
-                type: sessionStorage.getItem(window.cookies_key_start+'type'),
-                roles: sessionStorage.getItem(window.cookies_key_start+'roles'),
+                name: window.Save.get('name'),
+                img: window.Save.get('img'),
+                type: window.Save.get('type'),
+                roles: window.Save.get('roles'),
             });
             window.app.$store.state.home = window.app.$store.state.auth.getHome;
 
