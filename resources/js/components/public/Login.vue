@@ -128,6 +128,8 @@
                                 window.Save.storeAuthToken(res.data.success.user['token']);//.store('token', res.data.success.user['token']);
 
                                 const login_redirect = window.Save.getLoginRedirect();// localStorage.getItem(window.cookies_key_start+'login_redirect');
+                                console.log(login_redirect)
+                                return
                                 if (login_redirect)
                                     window.location.href = login_redirect;
                                 else
