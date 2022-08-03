@@ -70,8 +70,6 @@
                 axios.post(location.origin + '/auth/callback' + this.loginQueries)
                     .then(res => {
 
-                        console.log(res)
-
                         if (res.data.error) {
 
                             this.loading.hide();

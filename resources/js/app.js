@@ -60,9 +60,6 @@ require('./save'); //  token storage mechanism
 
 let token = window.Save.getAuthToken();
 
-console.log('token')
-console.log(token)
-
 if (token != null) { // if token exist
 
     /**
