@@ -59,8 +59,6 @@ class Profile extends Model
                 if (!$this->major_department->is_major)
                     return [['Invalid student major.']];
                 else {
-                    Log::info($this->department);
-                    Log::info($local_foreign);
                     $amount = $this->department->fee_per_term[$local_foreign];
                 }
             }
