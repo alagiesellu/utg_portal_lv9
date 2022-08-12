@@ -10,6 +10,7 @@ use App\Models\Academics\Grade;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class GroupController extends Controller
@@ -105,7 +106,7 @@ class GroupController extends Controller
             'name' => 'required|unique:groups,name,NULL,id,deleted_at,NULL|max:225',
             'description' => 'required|max:500',
             'department_id' => 'required|exists:departments,id',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -114,10 +115,10 @@ class GroupController extends Controller
         );
 
         $user = $request->user();
-        abort_errors_if(
-            $user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $group = Group::create([
             'name' => $request['name'],
@@ -181,7 +182,7 @@ class GroupController extends Controller
         $request['group'] = Group::find($request['id']);
         $validator = Validator::make($request->all(), [
             'group' => 'required',
-            'password' => 'required',
+//            'password' => 'required',
         ]);
 
         abort_errors_if(
@@ -191,10 +192,10 @@ class GroupController extends Controller
 
         $user = $request->user();
 
-        abort_errors_if(
-            $user->checkPassword($request['password'])['code'] != 202,
-            [['Invalid password confirmation.']]
-        );
+//        abort_errors_if(
+//            $user->checkPassword($request['password'])['code'] != 202,
+//            [['Invalid password confirmation.']]
+//        );
 
         $can_delete = $request['group']->canDelete();
 
