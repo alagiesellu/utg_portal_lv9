@@ -53,14 +53,10 @@ class Profile extends Model
                 $rate = Option::where('key', 'exchange_rate')->first()->value;
             }
             $term = Term::find($term_id);
-            if ($term->pay_per_class)
-                $amount = 0;
-            else {
-                if (!$this->major_department->is_major)
-                    return [['Invalid student major.']];
-                else {
-                    Log::info($this->user);
-                    $amount = $this->department->fee_per_term[$local_foreign];
+            $amount = 0;
+            if (! $term->pay_per_class) {
+                if ($this->major_department->is_major) {
+                    $amount = $this->major_department->fee_per_term[$local_foreign];
                 }
             }
             $term_receipt = TermReceipt::create([
