@@ -14,6 +14,7 @@ use App\Models\General\Option;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Log;
 
 // retire
 class Profile extends Model
@@ -57,8 +58,11 @@ class Profile extends Model
             else {
                 if (!$this->major_department->is_major)
                     return [['Invalid student major.']];
-                else
+                else {
                     $amount = $this->department->fee_per_term[$local_foreign];
+                    Log::info($this->department);
+                    Log::info($local_foreign);
+                }
             }
             $term_receipt = TermReceipt::create([
                 'term_id' => $term_id,
